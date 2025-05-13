@@ -1,0 +1,182 @@
+---
+
+
+// or .json
+// import { onMount } from 'astro/client';
+// import Splide from '@splidejs/splide';
+// import undeadList from '../data/undead.js';
+import UndeadCarousel from '~/components/UndeadCarousel.jsx';
+import undeadList from '~/data/undead.js';
+
+// const undeadFeatures = undeadList.map((undead) => ({
+//   title: undead.name,
+//   description: `${undead.attacks} | AC: ${undead.ac} | HP: ${undead.hp}`,
+//   icon: undead.image,
+// }));
+
+const undeadFeatures = undeadList.map((undead) => ({
+  title: undead.name,
+  description: `
+    <strong>HP:</strong> ${undead.hp}<br>
+    <strong>AC:</strong> ${undead.ac}<br>
+    <strong>Saves:</strong> ${undead.saves}<br>
+    <strong>Attacks:</strong> ${undead.attacks}<br>
+    <strong>Ranged:</strong> ${undead.ranged}<br>
+    <strong>Special:</strong> ${undead.special.length > 135 ? undead.special.slice(0, 135) + '...' : undead.special}<br>
+  `,
+  icon: undead.image,
+}));
+
+
+// onMount(() => {
+//   new Splide('.splide', {
+//     type: 'loop',
+//     perPage: 1,
+//     autoplay: true,
+//     pauseOnHover: true,
+//   }).mount();
+// });
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Animate Dead',
+};
+
+---
+
+  
+
+<Layout metadata={metadata}>
+<html>
+  <body>
+    <Hero
+    tagline="Animate Dead"
+    title="Elevate your army with the supreme God of Creation and Destruction NETHYS The All-seeing eye!"
+    subtitle="(Divine): Nethys' call, in shadows weave, Lifeless forms, now life receive. ARISE!  (Arcane): Whispers arcane, shadows weave, Bones now dance, in magic's leave. ARISE."
+    actions={[{ variant: 'primary', target: '_blank', text: 'My Army', href: '/' }]}
+    image={{
+      src: '~/assets/images/salathilGod.gif',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+    <!-- <div class="undead-grid">
+      {undeadList.map((undead) => (
+        <div class="undead-card">
+          <h2>{undead.name}</h2>
+          <p><strong>Hit Dice:</strong> {undead.hitDice}</p>
+          <p><strong>HP:</strong> {undead.hp}</p>
+          <p><strong>AC:</strong> {undead.ac}</p>
+          <p><strong>Attacks:</strong> {undead.attacks}</p>
+          <p><strong>Special:</strong> {undead.special}</p>
+          <p><strong>Ranged:</strong> {undead.ranged}</p>
+          <p><strong>Defenses:</strong> {undead.defenses}</p>
+          <p><strong>Stats:</strong> {undead.stats}</p>
+          <p><strong>Feats:</strong> {undead.feats}</p>
+          <p><strong>Gear:</strong> {undead.gear}</p>
+        </div>
+      ))}
+    </div> -->
+
+    <!-- <div class="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {undeadList.map((undead) => (
+              <li class="splide__slide">
+                <div class="undead-card">
+                  <img src={undead.image} alt={undead.name} />
+                  <h2>{undead.name}</h2>
+                    <p><strong>Hit Dice:</strong> {undead.hitDice}</p>
+                    <p><strong>HP:</strong> {undead.hp}</p>
+                    <p><strong>AC:</strong> {undead.ac}</p>
+                    <p><strong>Attacks:</strong> {undead.attacks}</p>
+                    <p><strong>Special:</strong> {undead.special}</p>
+                    <p><strong>Ranged:</strong> {undead.ranged}</p>
+                    <p><strong>Defenses:</strong> {undead.defenses}</p>
+                    <p><strong>Stats:</strong> {undead.stats}</p>
+                    <p><strong>Feats:</strong> {undead.feats}</p>
+                    <p><strong>Gear:</strong> {undead.gear}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div> -->
+      
+      
+
+      <Features2
+  title="My Undead Army and Planar Binding/Calling"
+  subtitle="From my left hand, the world is born—formed in wonder, shaped by will. From my right hand, it ends—unmade in silence, returned to pure thought. To Create is to know potential. To Destroy is to understand it. Only the wise wield both. Only the devoted accept that they are one."
+  columns={3}
+  items={undeadFeatures}
+/>
+
+<UndeadCarousel client:load />
+      <!-- <Features2
+    title="My Army and Planar Calling/Binding"
+    subtitle="From my left hand, the world is born—formed in wonder, shaped by will. From my right hand, it ends—unmade in silence, returned to pure thought. To Create is to know potential. To Destroy is to understand it. Only the wise wield both. Only the devoted accept that they are one."
+    columns={3}
+    items={[
+      {
+        title: 'Educational',
+        description:
+          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Interior Design',
+        description:
+          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
+        icon: 'tabler:home-star',
+      },
+      {
+        title: 'Photography',
+        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
+        icon: 'tabler:photo',
+      },
+      {
+        title: 'E-commerce',
+        description:
+          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Blog',
+        description:
+          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
+        icon: 'tabler:article',
+      },
+      {
+        title: 'Business',
+        description:
+          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'Branding',
+        description:
+          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
+        icon: 'tabler:arrow-big-up-lines',
+      },
+      {
+        title: 'Medical',
+        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
+        icon: 'tabler:vaccine',
+      },
+      {
+        title: 'Fashion Design',
+        description:
+          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
+        icon: 'tabler:tie',
+      },
+    ]}
+  /> -->
+  </body>
+</html>
+</Layout>

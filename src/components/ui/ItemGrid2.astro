@@ -40,9 +40,26 @@ const {
             itemClasses?.panel
           )}
         >
-          {(icon || defaultIcon) && (
+
+            {(icon || defaultIcon) && (
+              icon?.match(/\.(png|jpe?g|gif|svg|webp)$/i) ? (
+                <img
+                  src={icon}
+                  alt={title}
+                  class={twMerge('mb-2 w-24 h-24 object-contain', defaultIconClass, itemClasses?.icon)}
+                />
+              ) : (
+                <Icon
+                  name={icon || defaultIcon}
+                  class={twMerge('mb-2 w-15 h-15', defaultIconClass, itemClasses?.icon)}
+                />
+              )
+            )}
+
+
+          {/* {(icon || defaultIcon) && (
             <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
-          )}
+          )} */}
           <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
           {description && (
             <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
