@@ -31,8 +31,8 @@ export const headerData = {
           href: getPermalink('/#features'),
         },
         {
-          text: 'Services',
-          href: getPermalink('/services'),
+          text: 'Animate Dead',
+          href: getPermalink('/dndservices'),
         },
         {
           text: 'Pricing',
