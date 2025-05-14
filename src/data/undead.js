@@ -109,7 +109,7 @@ export default [
         stats: "Str 18, Dex 14, Con —, Int —, Wis 10, Cha 14",
         feats: "Improved Initiative, Shield Wall",
         gear: "full plate armor +1 [mwk full plate armor], mwk longsword, mwk tower shield (Hardness 5 HP 20)",
-        image: "public/images/zeroz.jpeg"
+        image: "/images/zeroz.jpeg"
       },
     // Add more as needed
   ];
