@@ -13,6 +13,8 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
+import image from '@astrojs/image';
+
 import react from '@astrojs/react';
 
 
@@ -25,6 +27,8 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 
+
+
 export default defineConfig({
   output: 'static',
 
@@ -35,6 +39,7 @@ export default defineConfig({
     }),
     sitemap(),
     mdx(),
+    image(),
     icon({
       include: {
         tabler: ['*'],
