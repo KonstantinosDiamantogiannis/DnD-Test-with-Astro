@@ -101,8 +101,8 @@ export const headerData = {
           href: getPermalink('markdown-elements-demo-post', 'post'),
         },
         {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
+          text: 'Spellbook Page',
+          href: getPermalink('spellbook', 'category'),
         },
         {
           text: 'Tag Page',

@@ -13,7 +13,7 @@ export default [
       stats: "Str 20, Dex 15, Con -, Int -, Wis 10, Cha 14",
       feats: "Improved Initiative, Outflank",
       gear: "+1 Dastard Breastplate (Asmodeus), +1 Heavy Wooden Shield with mwk Wooden Shield Spikes, mwk Wooden Scimitar ",
-      image: "src/assets/images/Gunnar_Mio_Bloody_Skeleton.png"
+      image: "/images/Gunnar_Mio_Bloody_Skeleton.png"
     },
     {
       name: "Yorgun Smith Dwarf Skeleton (lesser Animate Dead)",
@@ -29,7 +29,7 @@ export default [
       stats: "Str 18, Dex 16, Con -, Int -, Wis 10, Cha 10",
       feats: "Improved Initiative, Outflank",
       gear: "mwk chain shirt, mwk battleaxe, mwk heavy steel shield, mwk dwarven pelletbow heavy (crafted 25gp)",
-      image: "src/assets/images/Yorgun_Skeleton.jpg"
+      image: "/images/Yorgun_Skeleton.jpg"
     },
     {
         name: "Gerion Joth Minotaur Fast Zombie Defender of the Horn (HD 6)",
@@ -45,7 +45,7 @@ export default [
         stats: "Str 21, Dex 12, Con -, Int -, Wis 10, Cha 10",
         feats: "Toughness, Outflank",
         gear: "mwk Large Greataxe [80gp craft 26.6gp], mwk Large Armored-kilt Armored Coat (check pen -1) [280gp] craft 93.3gp",
-        image: "src/assets/images/GerionZombie.jpg"
+        image: "/images/GerionZombie.jpg"
       },
       {
         name: "Kumanda Slays-nine men Fast Zombie (HD 8)",
@@ -77,7 +77,7 @@ export default [
         stats: "Str 14, Dex 20, Con -, Int -, Wis 10, Cha 14",
         feats: "Improved Initiative, Outflank",
         gear: "mwk temple sword, mwk wooden shuriken (50)",
-        image: "src/assets/images/James.jpeg"
+        image: "/images/James.jpeg"
       },
       {
         name: "Hassan J’raaq Fast Zombie (HD 7)",
@@ -93,7 +93,7 @@ export default [
         stats: "Str 20, Dex 15, Con —, Int —, Wis 10, Cha 14",
         feats: "Improved Initiative, Outflank",
         gear: "+1 furious falchion, mwk breastplate , mwk javelin ",
-        image: "src/assets/images/Hassan.jpeg"
+        image: "/images/Hassan.jpeg"
       },
       {
         name: "Zeroz Fistan and his team of 3 fighters Medium Bloody Skeleton (HD 5) [4]",
