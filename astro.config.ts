@@ -13,7 +13,7 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-// import image from '@astrojs/image';
+import image from '@astrojs/image';
 
 import react from '@astrojs/react';
 
@@ -39,7 +39,7 @@ export default defineConfig({
     }),
     sitemap(),
     mdx(),
-    // image(),
+    image(),
     icon({
       include: {
         tabler: ['*'],

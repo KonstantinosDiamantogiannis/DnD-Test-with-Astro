@@ -61,7 +61,7 @@ export default [
         stats: "24, Dex 14, Con -, Int -, Wis 10, Cha 10",
         feats: "Toughness, Outflank",
         gear: "mwk longsword, mwk wooden longsword , mwk heavy steel shield , mwk breastplate",
-        image: "src/assets/images/Kumanda.jpeg"
+        image: "/images/Kumanda.jpeg"
       },
       {
         name: "James O'Toole Bloody Skeleton (HD 6)",
