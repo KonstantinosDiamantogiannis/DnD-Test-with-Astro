@@ -86,7 +86,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Blog',
+      text: 'Personal Items and Info',
       links: [
         {
           text: 'Blog List',
@@ -101,12 +101,12 @@ export const headerData = {
           href: getPermalink('markdown-elements-demo-post', 'post'),
         },
         {
-          text: 'Spellbook Page',
+          text: 'Spellbooks',
           href: getPermalink('spellbook', 'category'),
         },
         {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          text: 'Ritual',
+          href: getPermalink('pact', 'tag'),
         },
       ],
     },

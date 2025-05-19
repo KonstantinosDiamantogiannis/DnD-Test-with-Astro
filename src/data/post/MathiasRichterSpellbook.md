@@ -6,8 +6,8 @@ excerpt: This beautiful book is made of fine cerulean leather embossed withgold 
 category: Spellbook
 image: https://images.nightcafe.studio/jobs/eln2ZOobNXpDEjQbpVBP/eln2ZOobNXpDEjQbpVBP--4--jw4qf_2x.jpg
 tags:
-  - Spellbook
-  - Brandescar
+  - spellbook
+  - brandescar
 metadata:
   canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
 
