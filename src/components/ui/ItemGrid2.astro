@@ -16,6 +16,7 @@ const {
 } = classes;
 ---
 
+<!-- ----------------------------------------------- OLD ItemGrid2.astro ---------------------------
 {
   items && items.length > 0 && (
     <div
@@ -73,4 +74,60 @@ const {
       ))}
     </div>
   )
-}
+} ----------------------------------------------------------------------------------------->
+
+{items && items.length > 0 && (
+  <div
+    class={twMerge(
+      `grid gap-8 gap-x-12 sm:gap-y-8 ${
+        columns === 4
+          ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+          : columns === 3
+          ? 'lg:grid-cols-3 sm:grid-cols-2'
+          : columns === 2
+          ? 'sm:grid-cols-2'
+          : ''
+      }`,
+      containerClass
+    )}
+  >
+    {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => {
+      // Determine if the icon is an image based on its file extension
+      const isImage = icon?.match(/\.(png|jpe?g|gif|svg|webp)$/i);
+      // Set the background image style if it's an image
+      const backgroundImageStyle = isImage
+        ? `background-image: url('${icon}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-blend-mode: overlay; background-color: rgba(0,0,0,0.35);`
+        : '';
+      return (
+        <div
+          class={twMerge(
+            'relative flex flex-col justify-end p-6 rounded-lg shadow-lg text-white',
+            panelClass,
+            itemClasses?.panel
+          )}
+          style={backgroundImageStyle}
+        >
+          {/* If the icon is not an image, render it as an icon component */}
+          {!isImage && (icon || defaultIcon) && (
+            <Icon
+              name={icon || defaultIcon}
+              class={twMerge('mb-2 w-15 h-15', defaultIconClass, itemClasses?.icon)}
+            />
+          )}
+          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
+          {description && (
+            <p
+              class={twMerge('text-m mt-2', descriptionClass, itemClasses?.description)}
+              set:html={description}
+            />
+          )}
+          {callToAction && (
+            <div class="mt-2">
+              <Button {...callToAction} />
+            </div>
+          )}
+        </div>
+      );
+    })}
+  </div>
+)}
